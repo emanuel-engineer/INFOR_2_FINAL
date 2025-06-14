@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>343</x>
+      <y>469</y>
+      <w>147</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Jugador_Niv1
+--
++void movimiento(x);
++void recoger();
++void animaciones(sprites);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>168</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>nivel1
+--
++void timer();
++void colocar_DB_pos_aleatoria();
++bool jugador_tiene_DB();
++void nivel1_terminar();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>525</x>
+      <y>168</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>nivel2
+--
++void timer();
++bool jugador_tiene_vida(vida_p1);
++int enemigo_vida();
++void nivel2_terminar();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>63</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>seleccionar niveles
+--
++void nivel1_iniciar();
+
++void nivel2_iniciar();
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>525</x>
+      <y>84</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>nivel
+--
++ void timer ();
++ void terminar();
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>126</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>126</y>
+      <w>126</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;60.0;160.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>525</x>
+      <y>350</y>
+      <w>147</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Jugador_Niv2
+--
++void movimiento(x,y);
++void atacar(timer);
++void animaciones(sprites);
++void vida_p1();
++void vida_enem();
++bool rev_vida_enem();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>343</x>
+      <y>280</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>jugador
+--
+#int vida;
+--
++void movimiento (x,y);
++void recoger();
++void animaciones(sprites);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>427</x>
+      <y>350</y>
+      <w>21</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>483</x>
+      <y>231</y>
+      <w>280</w>
+      <h>301</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>380.0;10.0;380.0;410.0;10.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>483</x>
+      <y>308</y>
+      <w>105</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0;130.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>238</y>
+      <w>21</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>497</x>
+      <y>63</y>
+      <w>245</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>330.0;150.0;330.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>133</x>
+      <y>70</y>
+      <w>196</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>El diagrama comienza en 
+Seleccionar niveles.(facilita testing)
+(se debeimplementar una clase
+para iniciar desde el nivel 1 
+y avanzar automaticamente al 2.
+bg=yellow
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>637</x>
+      <y>126</y>
+      <w>133</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;170.0;40.0;170.0;60.0</additional_attributes>
+  </element>
+</diagram>
