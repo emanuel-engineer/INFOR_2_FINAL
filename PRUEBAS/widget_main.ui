@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>widget_main</class>
+ <widget class="QWidget" name="widget_main">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>405</width>
+    <height>282</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>widget_main</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>170</y>
+     <width>160</width>
+     <height>95</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="nivel1">
+      <property name="text">
+       <string>NIVEL 1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="nivel2">
+      <property name="text">
+       <string>NIVEL 2</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="cerrar">
+      <property name="text">
+       <string>cerrar</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="iniciarjuego">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>50</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>INICIAR JUEGO</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
