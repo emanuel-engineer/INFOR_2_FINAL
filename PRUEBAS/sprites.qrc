@@ -2,5 +2,8 @@
     <qresource prefix="/new/sprites">
         <file>parado.png</file>
         <file>Piso.png</file>
+        <file>draco.png</file>
+        <file>roca_levantada.png</file>
+        <file>roca_completa.png</file>
     </qresource>
 </RCC>

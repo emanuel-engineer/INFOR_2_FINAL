@@ -27,13 +27,16 @@ protected:
 private:
     Ui::nivel1 *ui;
 
-    QGraphicsScene *escena;  // Declarar el puntero a la escena
+    QGraphicsScene *escena;  // Declarar el puntero a la escena (Sprite roshi)
+    QGraphicsScene *escenaPiedra;
     void configurarGraphicsView();
     void mostrarRoshi();
     QGraphicsPixmapItem *roshiItem;
     int posXroshi = 0;
     const int velocidad = 5;
-
+    void animacion_inicioNVL();
+    void mostrarPiedra();
+    QGraphicsPixmapItem *piedraItem;
 };
 
 #endif // NIVEL1_H

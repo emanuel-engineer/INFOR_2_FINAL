@@ -9,11 +9,18 @@ nivel1::nivel1(QWidget *parent)
 {
     ui->setupUi(this);
 
+    escena = new QGraphicsScene(this);
+    ui->graphicsView->setScene(escena);
+
+    escenaPiedra = new QGraphicsScene(this);
+    ui->piedra->setScene(escenaPiedra);
+
     configurarGraphicsView();
     mostrarRoshi();
     setFocus();
     setFocusPolicy(Qt::StrongFocus); //Eventos del teclado
-    qDebug() << "Item creado:" << roshiItem;
+    //QDebug() << "Item creado:" << roshiItem;
+    mostrarPiedra();
 }
 
 nivel1::~nivel1()
@@ -70,11 +77,35 @@ void nivel1::keyPressEvent(QKeyEvent *event)
 }
 void nivel1::configurarGraphicsView()
 {
-    // Crear e inicializar la escena
-    escena = new QGraphicsScene(this);
-    ui->graphicsView->setScene(escena);
-
     // Opcional: Configurar propiedades de la vista
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+}
+
+void animacion_inicioNVL(){
+//ANIMACION AL INICIO DEL NIVEL::
+    //Un rectangulo rosa cubre toda la ventana, y se va deshaciendo desde
+    //el centro hacia afuera , con un circulo en medio, dejando ver la escena (4 segundos)
+
+
+}
+void nivel1::mostrarPiedra(){
+    QPixmap roca_C(":/new/sprites/roca_completa.png");
+
+    if (roca_C.isNull()){
+        qDebug()<<"Error al cargar el sprite de piedra";
+        return;
+    }
+    /*IMAGEN ESCALADA
+    QPixmap imagenEscalada = imagen.scaled(200, 200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    escena->addPixmap(imagenEscalada);*/
+
+    /// IMAGEN SIN ESCALAR ::
+    //ui->graphicsView->fitInView(escena->itemsBoundingRect(), Qt::KeepAspectRatio);
+    //piedraItem = escena->addPixmap(roca_C);
+
+
+
+    piedraItem = escenaPiedra->addPixmap(roca_C);
+    piedraItem->setPos(100, 100); // Posición inicial
 }
