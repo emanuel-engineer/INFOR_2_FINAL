@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/sprites">
+        <file>parado.png</file>
+        <file>Piso.png</file>
+    </qresource>
+</RCC>
