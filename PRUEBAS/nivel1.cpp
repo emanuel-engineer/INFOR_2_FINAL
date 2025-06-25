@@ -31,6 +31,7 @@ nivel1::~nivel1()
 
     delete ui;
     delete escena;
+    delete escenaPiedra;
 }
 
 void nivel1::mostrarRoshi(){
@@ -105,7 +106,7 @@ void nivel1::mostrarPiedra(){
     //piedraItem = escena->addPixmap(roca_C);
 
 
-
-    piedraItem = escenaPiedra->addPixmap(roca_C);
+    QPixmap imagenEscalada = roca_C.scaled(150,150, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    piedraItem = escenaPiedra->addPixmap(imagenEscalada);
     piedraItem->setPos(100, 100); // Posición inicial
 }

@@ -5,5 +5,7 @@
         <file>draco.png</file>
         <file>roca_levantada.png</file>
         <file>roca_completa.png</file>
+        <file>intro.MP3</file>
+        <file>logoDB.png</file>
     </qresource>
 </RCC>

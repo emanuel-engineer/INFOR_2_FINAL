@@ -1,4 +1,5 @@
 QT       += core gui
+QT += multimedia #Para musica del menu principal
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
