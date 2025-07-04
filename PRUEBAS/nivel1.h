@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QGraphicsScene>
+#include <QLabel>
+
 
 namespace Ui {
 class nivel1;
@@ -21,7 +23,8 @@ protected:
     void keyPressEvent(QKeyEvent *event) override;
 
 
-
+private slots:
+    void mostrarMensajeGameover();
 
 
 private:
@@ -37,6 +40,8 @@ private:
     void animacion_inicioNVL();
     void mostrarPiedra();
     QGraphicsPixmapItem *piedraItem;
+    QLabel *mensaje1label;
+    bool interaccionPiedra = false ;
 };
 
 #endif // NIVEL1_H
