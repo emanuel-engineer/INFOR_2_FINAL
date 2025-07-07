@@ -11,10 +11,10 @@ nivel1::nivel1(QWidget *parent)
 
     escena = new QGraphicsScene(this);
     ui->graphicsView->setScene(escena);
-
+    /*
     escenaPiedra = new QGraphicsScene(this);
     ui->piedra->setScene(escenaPiedra);
-
+*/
     configurarGraphicsView();
     mostrarRoshi();
     setFocus();
@@ -31,7 +31,7 @@ nivel1::~nivel1()
 
     delete ui;
     delete escena;
-    delete escenaPiedra;
+   // delete escenaPiedra;
 }
 
 void nivel1::mostrarRoshi(){
@@ -50,6 +50,7 @@ void nivel1::mostrarRoshi(){
     //ui->graphicsView->fitInView(escena->itemsBoundingRect(), Qt::KeepAspectRatio);
     roshiItem = escena->addPixmap(imagen);
     roshiItem -> setPos(posXroshi, 0);
+    roshiItem->setShapeMode(QGraphicsPixmapItem::BoundingRectShape);
 };
 
 
@@ -62,6 +63,9 @@ void nivel1::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Right:
         posXroshi += velocidad;
         break;
+    case Qt::Key_Space:
+        verificarInteraccion();
+        return;
     default:
         QWidget::keyPressEvent(event);
         return;
@@ -69,6 +73,10 @@ void nivel1::keyPressEvent(QKeyEvent *event)
 
     // Actualizar posición del sprite
     roshiItem->setPos(posXroshi, 0);
+    piedraItem->setPos(posXpiedra, posYpiedra);
+
+    verificarInteraccion();
+
 
     // Opcional: Limitar el movimiento dentro de los bordes
     //if(posXroshi < 0) posXroshi = 0;
@@ -106,7 +114,18 @@ void nivel1::mostrarPiedra(){
     //piedraItem = escena->addPixmap(roca_C);
 
 
-    QPixmap imagenEscalada = roca_C.scaled(150,150, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    piedraItem = escenaPiedra->addPixmap(imagenEscalada);
-    piedraItem->setPos(100, 100); // Posición inicial
+    QPixmap imagenEscalada = roca_C.scaled(200,200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    piedraItem = escena->addPixmap(imagenEscalada);
+    piedraItem->setPos(posXpiedra, posYpiedra); // Posición inicial
+    piedraItem->setFlag(QGraphicsItem::ItemIsMovable, false); //QUE NO SE MUEVA ESTA PUTA PIEDRA POR DIOS
+}
+
+void nivel1::verificarInteraccion(){
+    if (roshiItem -> collidesWithItem(piedraItem, Qt::IntersectsItemBoundingRect)&& !interaccionPiedra){
+        //Cambiamos el sprite de roshi
+
+        interaccionPiedra = true;
+        piedraItem->setPixmap(QPixmap(":/new/sprites/roca_levantada.png"));
+    }
+
 }

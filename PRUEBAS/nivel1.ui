@@ -28,18 +28,52 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>470</y>
-     <width>981</width>
-     <height>171</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>700</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1000</width>
+     <height>700</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1000</width>
+     <height>700</height>
+    </size>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>1000</width>
+     <height>700</height>
+    </size>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
    </property>
    <property name="autoFillBackground">
     <bool>true</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: transparent;
-border: 0px;</string>
+    <string notr="true">QGraphicsView {
+	background-image: url(:/new/sprites/Piso.png);
+    min-width: 1000px;
+    max-width: 1000px;
+    min-height: 700px;
+    max-height: 700px;
+    border: 0px;
+    padding: 0px;
+}</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Shape::NoFrame</enum>
@@ -57,7 +91,7 @@ border: 0px;</string>
     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
    </property>
    <property name="sizeAdjustPolicy">
-    <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+    <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
    </property>
    <property name="backgroundBrush">
     <brush brushstyle="NoBrush">
@@ -67,19 +101,6 @@ border: 0px;</string>
       <blue>0</blue>
      </color>
     </brush>
-   </property>
-  </widget>
-  <widget class="QGraphicsView" name="graphicsView_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1001</width>
-     <height>701</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/new/sprites/Piso.png);</string>
    </property>
   </widget>
   <widget class="QGraphicsView" name="piedra">
@@ -117,9 +138,6 @@ border: 0px;</string>
     </brush>
    </property>
   </widget>
-  <zorder>graphicsView_2</zorder>
-  <zorder>graphicsView</zorder>
-  <zorder>piedra</zorder>
  </widget>
  <resources/>
  <connections/>
